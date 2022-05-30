@@ -32,8 +32,8 @@
 
     <!-- Form View -->
     <record id="movie_form" model="ir.ui.view">
-        <field name="name">Library Book Form</field>
-        <field name="model">library.movie</field>
+        <field name="name">Movie Form</field>
+        <field name="model">models</field>
         <field name="arch" type="xml">
             <form>
                 <header>
