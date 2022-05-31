@@ -160,7 +160,10 @@ class VideoClubEmployees(models.Model):
     _inherits = {'res.partner': 'partner_id'}
     _description = "VideoClub employee"
 
-    partner_id = fields.Many2one('res.partner', ondelete='cascade')
+    partner_id = fields.Many2one( 'res.partner',
+        string='Partner',
+        ondelete='cascade',required=True)
+        
     date_start = fields.Date('Member Since')
     date_end = fields.Date('Termination Date')
     employee_number = fields.Char(string='Nº empleado')

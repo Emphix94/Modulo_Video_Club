@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   
-   
-    <record id='movie.action' model='ir.actions.act_window'>
+   <!--
+    <record id='movie_action' model='ir.actions.act_window'>
         <field name="name">película</field>
-        <field name="res_model">models.movie</field>
+        <field name="res_model">video.movie</field>
         <field name="view_mode">tree,form</field>
     </record>
+    -->
 
-
-    <record id='employees.action' model='ir.actions.act_window'>
+    <record id='employees_action' model='ir.actions.act_window'>
         <field name="name">empleados</field>
-        <field name="res_model">video_club.VideoClubEmployees</field>
+        <field name="res_model">res.partner</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id='client.action' model='ir.actions.act_window'>
+    <record id='client_action' model='ir.actions.act_window'>
         <field name="name">clientes</field>
-        <field name="res_model">video_club.VideoClubClient</field>
+        <field name="res_model">res.partner</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -26,11 +26,12 @@
 
 
     <menuitem name="VideoClub" id="video_club_base_menu" />
-    <menuitem name="Películas" id="movies_menu" parent="video_club_base_menu" action="movie.action"/>
-    <menuitem name="Empleados" id="employees_menu" parent="video_club_base_menu" action="employees.action"/>
-    <menuitem name="Clientes" id="clients_menu" parent="video_club_base_menu" action="client.action"/>
+    <!--<menuitem name="Películas" id="movies_menu" parent="video_club_base_menu" action="movie_action"/>-->
+    <menuitem name="Empleados" id="employees_menu" parent="video_club_base_menu" action="employees_action"/>
+    <menuitem name="Clientes" id="clients_menu" parent="video_club_base_menu" action="client_action"/>
 
     <!-- Form View -->
+    <!--
     <record id="movie_form" model="ir.ui.view">
         <field name="name">Movie Form</field>
         <field name="model">models</field>
@@ -63,19 +64,19 @@
             </form>
         </field>
     </record>
+    -->
 
 
-
-    <record id="movie_form" model="ir.ui.view">
+    <record id="employee_form" model="ir.ui.view">
         <field name="name">employees.form</field>
-        <field name="model">video_club.VideoClubEmployees</field>
+        <field name="model">res.partner</field>
         <field name="arch" type="xml">
             <form>
                 
                 <group>
                     <group>
-                        <field name="partner_id"/>
-                        <field name="date_start"/>
+                        <field name="partner_id" widget="many2many_tags" ref="base.view_partner_form"/>
+                        <field name="date_start" />
                         <field name="date_end" />
                         <field name="employee_number"/>
                     </group>
