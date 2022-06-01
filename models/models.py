@@ -32,7 +32,8 @@ from odoo.tools.translate import _
 
 
 class movie (models.Model):
-    _name='video_club.pelicula'
+    
+    _name='video.movie'
     _description='peliculas que posee el videoclub'
 
     title = fields.Char(string='título')
@@ -163,7 +164,7 @@ class VideoClubEmployees(models.Model):
     partner_id = fields.Many2one( 'res.partner',
         string='Partner',
         ondelete='cascade',required=True)
-        
+
     date_start = fields.Date('Member Since')
     date_end = fields.Date('Termination Date')
     employee_number = fields.Char(string='Nº empleado')

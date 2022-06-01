@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   
-   <!--
+
     <record id='movie_action' model='ir.actions.act_window'>
         <field name="name">película</field>
         <field name="res_model">video.movie</field>
         <field name="view_mode">tree,form</field>
     </record>
-    -->
+
 
     <record id='employees_action' model='ir.actions.act_window'>
         <field name="name">empleados</field>
@@ -31,10 +31,10 @@
     <menuitem name="Clientes" id="clients_menu" parent="video_club_base_menu" action="client_action"/>
 
     <!-- Form View -->
-    <!--
+    
     <record id="movie_form" model="ir.ui.view">
         <field name="name">Movie Form</field>
-        <field name="model">models</field>
+        <field name="model">video.movie</field>
         <field name="arch" type="xml">
             <form>
                 <header>
@@ -64,7 +64,7 @@
             </form>
         </field>
     </record>
-    -->
+    
 
 
     <record id="employee_form" model="ir.ui.view">
