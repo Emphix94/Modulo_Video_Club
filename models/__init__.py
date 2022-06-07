@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from . import movie
+from . import models
 from . import Categories
+
+
